@@ -4,5 +4,80 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="profile_screen_buttons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:enabled">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textAllCaps">true</item>
+        <!--<item name="android:alpha">1.0</item>-->
+        <!--<item name="android:layout_weight">1</item>-->
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="profile_screen_buttons_land" parent="profile_screen_buttons">
+        <item name="android:layout_height">46dp</item>
+    </style>
+
+    <style name="profile_dialog_box" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="find_frag_list_item_enabled">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/find_item_dark_gray</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="find_frag_list_item_disabled">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/find_item_light_gray2</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <color name="logo_green">#99FFCC</color>
+    <color name="logo_green2">#8AD0AE</color>
+    <color name="logo_green3">#D9E2DF</color>
+    <color name="logo_green4">#DDEBE7</color>
+    <color name="logo_green5">#E1F3EE</color>
+    <color name="logo_yellow">#FFF2CC</color>
+    <color name="logo_orange">#FFCE9F</color>
+    <color name="comune_main_button_color">#BADBDA</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="mandatory_question_indicator_color">#86B0A9</color>
+    <color name="answered_mandatory_question_indicator_color">#86B0A9</color>
+    <color name="question_indicator_color">#BADBDA</color>
+    <color name="answered_question_indicator_color">#BADBDA</color>
+    <color name="info_indicator_color">#C7C7C7</color>
+
+    <!--A4EDBC , ABF7C4 , A6E0AF , BDFFD5 , C0DBC3 , C1DBD7 -->
+    <color name="complete_survey_button_color">#C1D8D7</color>
+
+    <color name="starFullySelected">#FFCE9F</color>
+    <color name="starPartiallySelected">#FFB570</color>
+    <color name="starNotSelected">#999999</color>
+
+    <color name="new_survey_available_text_color">#FAB571</color>
+
+    <color name="survey_expiring_soon">#F56262</color>
+
+    <color name="find_item_light_gray2">#c2c2c2</color>
+    <color name="find_item_light_gray">#e5e5e5</color>
+    <color name="find_item_gray">#949494</color>
+    <color name="find_item_dark_gray">#757575</color>
+
+    <color name="separator_bar_gray">#bfbfbf</color>
 
 </resources>

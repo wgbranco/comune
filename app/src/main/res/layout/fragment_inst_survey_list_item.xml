@@ -1,0 +1,69 @@
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:padding="15dp"
+     tools:context="williamgbranco.comune.activity.StoredSurveysListFragment"
+    >
+
+    <Button
+        android:id="@+id/button_institution_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:focusable="false"
+        android:clickable="false"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="7dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:id="@+id/textview_institution_complete_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="normal"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textview_number_incomplete_surveys"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/imageview_report_problem"
+                android:visibility="gone"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_alert_warning"
+                android:contentDescription="@string/msg_has_survey_expiring_soon"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

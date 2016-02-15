@@ -1,0 +1,248 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+              android:orientation="vertical"
+             tools:context="williamgbranco.comune.activity.ReportFragment">
+
+    <include layout="@layout/fragment_institution_header"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:orientation="horizontal"
+            android:layout_gravity="left"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imageview_institution_type_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingRight="10dp">
+                <TextView
+                    android:id="@+id/textview_institution_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </RelativeLayout>-->
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+        <EditText
+            android:id="@+id/textview_user_comment"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:padding="15dp"
+            android:gravity="start"
+            android:maxLength="500"
+            android:hint="@string/hint_report_comment"
+            android:textColorHighlight="@color/logo_yellow"
+            android:textSelectHandle="@drawable/ic_text_select_handle"
+            android:textSelectHandleLeft="@drawable/ic_text_select_handle_left"
+            android:textSelectHandleRight="@drawable/ic_text_select_handle_right"
+            android:textCursorDrawable="@drawable/cursor_comment"
+            android:background="@drawable/edittext_comment_style"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/camera_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="start|center_vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    >
+                    <ImageView
+                        android:id="@+id/button_capture_picture"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:visibility="visible"
+                        android:layout_gravity="top"
+                        android:src="@drawable/ic_photo_camera_gray"
+                        android:background="@android:color/transparent"/>
+
+                    <Space
+                        android:layout_width="1dp"
+                        android:layout_height="13dp"/>
+
+                    <View
+                        android:id="@+id/separation_bar_1"
+                        android:visibility="invisible"
+                        android:layout_width="20dp"
+                        android:layout_height="1dp"
+                        android:background="@color/separator_bar_gray"
+                        />
+
+                    <Space
+                        android:layout_width="1dp"
+                        android:layout_height="13dp"/>
+                    
+                    <ImageView
+                        android:id="@+id/button_remove_picture"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:visibility="invisible"
+                        android:layout_gravity="bottom"
+                        android:src="@drawable/ic_content_clear_gray"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/imageview_thumbnail"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/report_photo_description"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="end|center_vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/imageview_video_preview"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:background="@android:color/transparent"/>
+
+                    <VideoView
+                        android:id="@+id/videoview_preview"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:visibility="invisible"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"/>
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginRight="20dp"
+                    >
+                    <ImageView
+                        android:id="@+id/button_record_video"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="top"
+                        android:src="@drawable/ic_videocam_gray"
+                        android:background="@android:color/transparent"/>
+
+                    <Space
+                        android:layout_width="1dp"
+                        android:layout_height="13dp"/>
+
+                    <View
+                        android:id="@+id/separation_bar_2"
+                        android:layout_width="20dp"
+                        android:layout_height="1dp"
+                        android:visibility="invisible"
+                        android:background="@color/separator_bar_gray"
+                        />
+
+                    <Space
+                        android:layout_width="1dp"
+                        android:layout_height="13dp"/>
+
+                    <ImageView
+                        android:id="@+id/button_remove_video"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:visibility="invisible"
+                        android:layout_gravity="bottom"
+                        android:src="@drawable/ic_content_clear_gray"
+                        android:background="@android:color/transparent"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/button_send_report"
+            android:text="@string/button_send_report"
+            android:layout_width="wrap_content"
+            android:minWidth="250dp"
+            android:layout_height="50dp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+</LinearLayout>
