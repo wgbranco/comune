@@ -1,0 +1,413 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             tools:context="williamgbranco.comune.activity.SurveyPageContentFragment">
+
+    <RelativeLayout
+        android:id="@+id/page_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <!--Layout da tela de exibição das questões-->
+        <LinearLayout
+            android:id="@+id/page_question"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|center_horizontal"
+            android:visibility="invisible"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/question_details"
+                android:orientation="vertical"
+                android:gravity="top|center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!--<TextView
+                    android:id="@+id/textview_question_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>-->
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:scrollbars="none"
+                    android:layout_gravity="start"
+                    android:minHeight="250dp"
+                    android:background="@drawable/edittext_comment_style"
+                    >
+
+                    <TextView
+                        android:id="@+id/textview_question_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:padding="15dp"
+                        android:textColor="@android:color/black"
+                        />
+                </ScrollView>
+
+               <!-- <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>-->
+            </LinearLayout>
+
+            <Space android:layout_width="match_parent"
+                   android:layout_height="25dp"/>
+
+            <RelativeLayout
+                android:id="@+id/container_answer_options"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:gravity="end">
+
+                <!-- Container para exibição das opções para questões de múltipla escolha-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ScrollView
+                        android:id="@+id/container_multiple_choice_question"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:visibility="invisible">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <!-- Container para exibição das opções de resposta em radiobuttons-->
+                                <LinearLayout
+                                    android:id="@+id/container_radio_group"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="invisible">
+
+                                    <RadioGroup
+                                        android:id="@+id/radio_group_options"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"/>
+                                </LinearLayout>
+
+                                <!-- Container para exibição das opções de resposta em checkboxes-->
+                                <LinearLayout
+                                    android:id="@+id/container_checkboxes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:visibility="invisible"/>
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </ScrollView>
+
+                    <!--<Space
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"/>-->
+                </LinearLayout>
+
+                <!-- Container para exibição das opções para questões de 'sim ou não' e de escala-->
+                <LinearLayout
+                    android:id="@+id/container_answer_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|bottom"
+                    android:visibility="invisible"
+                    android:orientation="vertical"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end|bottom"
+                        android:gravity="end">
+
+                        <!-- Container para exibição dos botões 'sim' e 'não'-->
+                        <LinearLayout
+                            android:id="@+id/container_yes_or_no_buttons"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="end"
+                            android:layout_gravity="end|bottom"
+                            android:paddingLeft="30dp"
+                            android:paddingRight="30dp"
+                            android:visibility="invisible">
+
+                            <LinearLayout
+                                android:gravity="start|center_horizontal"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content">
+                                <Button
+                                    android:id="@+id/yes_button"
+                                    android:text="@string/text_yes_button"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="end|center_horizontal"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content">
+                               <Button
+                                    android:id="@+id/no_button"
+                                    android:text="@string/text_no_button"
+                                    android:layout_width="100dp"
+                                    android:layout_height="40dp"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!-- Container para exibição da barra de seleção da nota-->
+                        <LinearLayout
+                            android:id="@+id/container_rating_bar"
+                            android:visibility="invisible"
+                            android:gravity="end|center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="bottom|center_horizontal"
+                                android:orientation="horizontal">
+
+                                <RatingBar
+                                    android:id="@+id/rating_bar"
+                                    android:numStars="5"
+                                    android:stepSize="0.5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <!--Layout da tela de instruções (primeira e última telas)-->
+        <RelativeLayout
+            android:id="@+id/page_instructions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <!--Container para a primeira pagina-->
+            <LinearLayout
+                android:id="@+id/first_page"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        >
+                        <TextView
+                            android:id="@+id/textview_introduction"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"/>
+                    </ScrollView>
+
+                    <!--<Space
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>-->
+
+                </LinearLayout>
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textview_total_pages"
+                        android:layout_gravity="top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"/>
+                </LinearLayout>-->
+
+            </LinearLayout>
+
+
+            <!--Container para a última pagina-->
+            <LinearLayout
+                android:id="@+id/last_page"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/container_msg_thankyou"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/textview_msg_thankyou"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textColor="@android:color/black"
+                            android:text="@string/msg_survey_completed_thankyou"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"/>
+                    </LinearLayout>
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        >
+                        <TextView
+                            android:id="@+id/textview_instructions"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"/>
+                    </ScrollView>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:id="@+id/textview_remaining_time"
+                        android:layout_gravity="top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/button_complete_survey"
+                        android:text="@string/text_button_complete_survey"
+                        android:layout_width="wrap_content"
+                        android:minWidth="250dp"
+                        android:layout_height="50dp"
+                        android:visibility="invisible"/>
+
+                   <!-- <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"/>-->
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <!--Layout da tela de espera-->
+        <LinearLayout
+            android:id="@+id/page_loading"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center">
+                <ProgressBar
+                    android:id="@+id/survey_progressbar"
+                    android:max="100"
+                    android:progress="50"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:indeterminate="false"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

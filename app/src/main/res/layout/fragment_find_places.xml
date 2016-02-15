@@ -1,0 +1,310 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+              android:orientation="vertical"
+             tools:context="williamgbranco.comune.activity.FindPlacesFragment">
+
+    <include layout="@layout/fragment_header_text"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"/>
+
+        <!--Lista tipos instituições-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<Spinner
+                android:id="@+id/spinner_"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>-->
+
+            <LinearLayout
+                android:id="@+id/item_security"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/imageview_security_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_security_light_gray"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical">
+                    <TextView
+                        android:id="@+id/textview_item_security"
+                        android:text="@string/text_layer_security"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/find_frag_list_item_disabled"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+
+            <LinearLayout
+                android:id="@+id/item_health"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/imageview_health_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_health_light_gray"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical">
+                    <TextView
+                        android:id="@+id/textview_item_health"
+                        android:text="@string/text_layer_health"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/find_frag_list_item_disabled"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+
+            <LinearLayout
+                android:id="@+id/item_education"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/imageview_education_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_education_light_gray"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center_vertical">
+                    <TextView
+                        android:id="@+id/textview_item_education"
+                        android:text="@string/text_layer_education"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/find_frag_list_item_disabled"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/find_item_light_gray2"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+
+        <!--Botões maiores/menores notas-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:gravity="bottom|center_vertical"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/button_lower_grades"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_mark_red_disabled"
+                        android:contentDescription="@string/button_lower_grades_descr"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/button_higher_grades"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_mark_green_disabled"
+                        android:contentDescription="@string/button_higher_grades_descr"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/find_item_light_gray2"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+
+        <!--Raio de distância do usuário-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<View
+                android:id="@+id/surfaceview_drawing"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+
+                <SeekBar
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekbar_circle_radius"/>]
+
+                <TextView
+                    android:id="@+id/textview_radius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--<Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@android:color/darker_gray"/>-->
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!--Botão encontrar-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom|center_horizontal">
+
+            <Button
+                android:id="@+id/button_find_places"
+                android:text="@string/button_find_plces_text"
+                android:layout_width="wrap_content"
+                android:minWidth="250dp"
+                android:layout_height="50dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
