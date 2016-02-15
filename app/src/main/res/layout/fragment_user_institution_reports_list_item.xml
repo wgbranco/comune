@@ -1,0 +1,52 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context="williamgbranco.comune.activity.InstitutionListFragment"
+    >
+
+    <Button
+        android:id="@+id/button_institution_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:focusable="false"
+        android:clickable="false"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="7dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:id="@+id/textview_institution_complete_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="normal"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="4dp"/>
+
+        <TextView
+            android:id="@+id/textview_number_submitted_reports"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</LinearLayout>
